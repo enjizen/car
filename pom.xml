@@ -23,7 +23,6 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
-		<spring-boot.version>2.0.1.RELEASE</spring-boot.version>
 		<maven.plugin.version>2.5</maven.plugin.version>
 		<redis.version>2.0.3.RELEASE</redis.version>
 		<jedis.version>2.9.0</jedis.version>
