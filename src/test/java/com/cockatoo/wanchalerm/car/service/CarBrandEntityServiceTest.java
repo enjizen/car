@@ -15,7 +15,7 @@ import static org.mockito.Mockito.verify;
 import static reactor.core.publisher.Mono.when;
 
 @RunWith(MockitoJUnitRunner.class)
-public class CarBrandServiceTest {
+public class CarBrandEntityServiceTest {
 
     @InjectMocks
     private CarBrandService carBrandService;

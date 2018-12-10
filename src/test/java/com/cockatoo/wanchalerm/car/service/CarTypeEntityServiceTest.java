@@ -1,7 +1,6 @@
 package com.cockatoo.wanchalerm.car.service;
 
 import com.cockatoo.wanchalerm.car.repository.CarTypeRepository;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -12,7 +11,7 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
 @RunWith(MockitoJUnitRunner.class)
-public class CarTypeServiceTest {
+public class CarTypeEntityServiceTest {
 
     @InjectMocks
     private CarTypeService carTypeService;
@@ -22,7 +21,7 @@ public class CarTypeServiceTest {
 
 
     @Test
-    public void test_getCarTypeAll(){
+    public void getCarTypeAll(){
         carTypeService.getCarTypeAll();
         verify(carTypeRepository, times(1)).findAll();
     }
