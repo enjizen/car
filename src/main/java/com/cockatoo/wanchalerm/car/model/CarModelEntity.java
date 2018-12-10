@@ -1,3 +1,8 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package com.cockatoo.wanchalerm.car.model;
 
 import lombok.Data;
@@ -9,16 +14,18 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 /**
  *
  * @author wanchalermyuphasuk
  */
-@Data
 @Entity
-@Table(name = "car_brand", catalog = "car")
-public class CarBrand implements Serializable {
+@Table(name = "car_model")
+@Data
+public class CarModelEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -26,13 +33,12 @@ public class CarBrand implements Serializable {
     @Basic(optional = false)
     @Column(name = "id")
     private Integer id;
-
     @Column(name = "name_thai")
     private String nameThai;
-
     @Column(name = "name_eng")
     private String nameEng;
+    @JoinColumn(name = "car_brand_id", referencedColumnName = "id")
+    @ManyToOne
+    private CarBrandEntity carBrandId;
 
-    @Column(name = "car_type_id")
-    private Integer carTypeId;
 }

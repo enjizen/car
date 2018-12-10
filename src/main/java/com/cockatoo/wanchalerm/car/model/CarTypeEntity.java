@@ -15,7 +15,7 @@ import javax.persistence.*;
 @Data
 @Entity
 @Table(name = "car_type", catalog = "car")
-public class CarType implements Serializable {
+public class CarTypeEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -35,5 +35,5 @@ public class CarType implements Serializable {
     private Date updatedDate;
 
     @OneToMany(mappedBy = "carTypeId", fetch = FetchType.LAZY)
-    private List<CarBrand> carBrandList;
+    private List<CarBrandEntity> carBrandEntityList;
 }

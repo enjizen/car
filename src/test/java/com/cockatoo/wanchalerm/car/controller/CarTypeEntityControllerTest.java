@@ -3,9 +3,9 @@ package com.cockatoo.wanchalerm.car.controller;
 
 
 import com.cockatoo.wanchalerm.car.constant.GeneralResponse;
-import com.cockatoo.wanchalerm.car.controller.response.CarTypeResponse;
+import com.cockatoo.wanchalerm.car.controller.response.DropDownResponse;
 import com.cockatoo.wanchalerm.car.factory.ResponseFactory;
-import com.cockatoo.wanchalerm.car.model.CarType;
+import com.cockatoo.wanchalerm.car.model.CarTypeEntity;
 import com.cockatoo.wanchalerm.car.service.CarTypeService;
 import org.junit.Before;
 import org.junit.Test;
@@ -28,7 +28,7 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
-public class CarTypeControllerTest {
+public class CarTypeEntityControllerTest {
 
     @InjectMocks
     private CarTypeController carTypeController;
@@ -48,25 +48,25 @@ public class CarTypeControllerTest {
     @Test
     public void test_getCarTypeSuccess() {
 
-        CarType carType = new CarType();
-        carType.setId(1);
-        carType.setNameThai("ทดสอบ");
-        carType.setNameEng("test");
-        carType.setUpdatedDate(new Date());
+        CarTypeEntity carTypeEntity = new CarTypeEntity();
+        carTypeEntity.setId(1);
+        carTypeEntity.setNameThai("ทดสอบ");
+        carTypeEntity.setNameEng("test");
+        carTypeEntity.setUpdatedDate(new Date());
 
-        List<CarType> carTypeList = new ArrayList<>();
-        carTypeList.add(carType);
+        List<CarTypeEntity> carTypeEntityList = new ArrayList<>();
+        carTypeEntityList.add(carTypeEntity);
 
-        when(carTypeService.getCarTypeAll()).thenReturn(carTypeList);
+        when(carTypeService.getCarTypeAll()).thenReturn(carTypeEntityList);
         ResponseEntity responseEntity = carTypeController.getCarTypeAll();
         assertEquals(responseEntity.getStatusCode(), HttpStatus.OK);
         assertNotNull(responseEntity);
-        final GeneralResponse<List<CarTypeResponse>> result = (GeneralResponse<List<CarTypeResponse>>) responseEntity.getBody();
+        final GeneralResponse<List<DropDownResponse>> result = (GeneralResponse<List<DropDownResponse>>) responseEntity.getBody();
         assertNotNull(result);
-        CarTypeResponse resultValue = result.getData().get(0);
+        DropDownResponse resultValue = result.getData().get(0);
         assertEquals(resultValue.getId().intValue(), 1);
-        assertEquals(resultValue.getNameThai(), "ทดสอบ");
-        assertEquals(resultValue.getNameEng(), "test");
+        assertEquals(resultValue.getLabelThai(), "ทดสอบ");
+        assertEquals(resultValue.getLabelEng(), "test");
         verify(carTypeService, times(1)).getCarTypeAll();
     }
 

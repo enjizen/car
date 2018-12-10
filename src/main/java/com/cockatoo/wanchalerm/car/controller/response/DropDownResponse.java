@@ -8,14 +8,14 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class CarTypeResponse {
+public class DropDownResponse {
 
     @JsonProperty("id")
     private Integer id;
 
-    @JsonProperty("name_thai")
-    private String nameThai;
+    @JsonProperty("label_thai")
+    private String labelThai;
 
-    @JsonProperty("name_eng")
-    private String nameEng;
+    @JsonProperty("label_eng")
+    private String labelEng;
 }
