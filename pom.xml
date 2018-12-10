@@ -5,11 +5,11 @@
 
 	<groupId>com.cockatoo.wanchalerm.car</groupId>
 	<artifactId>car</artifactId>
-	<version>0.1.0</version>
+	<version>0.1.2</version>
 	<packaging>jar</packaging>
 
 	<name>car</name>
-	<description>car project for Your car</description>
+	<description>Car project for Your car</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
