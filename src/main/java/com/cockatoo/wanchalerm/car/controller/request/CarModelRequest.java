@@ -1,9 +1,9 @@
 package com.cockatoo.wanchalerm.car.controller.request;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.Data;
+import lombok.Getter;
 
-@Data
+@Getter
 public class CarModelRequest {
 
     @JsonProperty("id")
